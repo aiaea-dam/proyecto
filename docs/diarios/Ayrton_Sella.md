@@ -1,15 +1,13 @@
 # Diario de Trabajo individual
 
-## Ayrton Didier Gianluca Sella
-
-### 2 DAM A
+## Ayrton Didier Gianluca Sella | 2 DAM A
 
 ---
 
 ## Índice de Meses
 
-- [[#Octubre 2026|Octubre]]
-- [[#Noviembre 2026|Noviembre]]
+- [Octubre 26](#octubre-2026)
+- [Noviembre 26](#noviembre-2026)
 
 ---
 
