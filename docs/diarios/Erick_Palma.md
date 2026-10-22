@@ -5,6 +5,8 @@
 
 ## Indice de meses
 
+- [Diario de trabajo individual](#diario-de-trabajo-individual)
+  - [Indice de meses](#indice-de-meses)
     - [Octubre 2026](#octubre-2026)
     - [Noviembre 2026](#noviembre-2026)
     - [Diciembre 2026](#diciembre-2026)
