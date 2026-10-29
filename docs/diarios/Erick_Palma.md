@@ -5,9 +5,9 @@
 
 ## Indice de meses
 
-    - [Octubre 2026](#octubre-2026)
-    - [Noviembre 2026](#noviembre-2026)
-    - [Diciembre 2026](#diciembre-2026)
+* **[Octubre 2026](#octubre-2026)**
+* **[Noviembre 2026](#noviembre-2026)**
+* **[Diciembre 2026](#diciembre-2026)**
 
 ### Octubre 2026
 
