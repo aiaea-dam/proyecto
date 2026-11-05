@@ -12,3 +12,10 @@
 | Fecha | Sesión | Tareas Realizadas | Tiempo | Problemas Encontrados | Soluciones Aplicadas | Reflexión/Aprendizaje |
 | --- | --- | --- | --- | --- | --- | --- |
 | 22/10 | S0 | Crear este diario | 30m | N/A | N/A | He creado un fichero... |
+| 29/10 | S1 | Crear documento proyecto en equipo | 2h | Para subir el documento del proyecto, lo hemos tenido que subir con 1 cuenta, y aparece solo Aaron como el propietario del commit | - | - |
+
+## Noviembre 2026
+
+| Fecha | Sesión | Tareas Realizadas | Tiempo | Problemas Encontrados | Soluciones Aplicadas | Reflexión/Aprendizaje |
+| --- | --- | --- | --- | --- | --- | --- |
+| 5/11 | S2 | Hecho un test de SCRUM | 20m | - | - | - |
