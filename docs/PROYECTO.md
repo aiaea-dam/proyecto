@@ -39,7 +39,7 @@ Nuestra aplicación permite organizar de forma sencilla los horarios escolares y
 
 ## Arquitectura general
 
-Aplicación móvil Android nativa desarrollada con Kotlin y Jetpack Compose (Material 3). Implementa una arquitectura MVVM (Model-View-ViewModel) con persistencia local reactiva mediante Room Database (SQLite) y Kotlin Coroutines / Flow. En una fase posterior, se integrará una sincronización con backend remoto.
+Aplicación móvil Android nativa desarrollada con Kotlin y Jetpack Compose (Material 3). Implementa una arquitectura **MVI (Model-View-Intent)** con flujo unidireccional de datos (UDF / Unidirectional Data Flow), estado inmutable (`UiState`), eventos de usuario (`UiIntent`) y efectos secundarios (`UiEffect`). La persistencia local se realiza de forma reactiva mediante Room Database (SQLite) y Kotlin Coroutines / Flow. En una fase posterior, se integrará sincronización con backend remoto.
 
 ## Casos de Uso Principales (Modelo Unificado)
 
@@ -68,7 +68,7 @@ Aplicación móvil Android nativa desarrollada con Kotlin y Jetpack Compose (Mat
 
 | Riesgo | Mitigación |
 | --- | --- |
-| Conflictos y solapamiento de horarios | Algoritmo de validación de solapamiento en ViewModel antes de persistir franjas |
+| Conflictos y solapamiento de horarios | Algoritmo de validación de solapamiento en el Reducer/ViewModel (MVI) antes de persistir franjas |
 | Cancelación puntual alterando recurrencia | Tabla de excepciones (`SlotCancellationEntity`) que anula solo la fecha indicada |
 | Falta de experiencia en Android / Compose | Uso de documentación oficial de Jetpack Compose, patrones recomendados e IA como apoyo |
 | Falta de compromiso | Reuniones semanales y revisión de progreso según calendario de Sprints |
