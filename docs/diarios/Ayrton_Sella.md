@@ -23,7 +23,7 @@
 | Fecha      | Sesión     | Tareas Realizadas            | Tiempo    | Problemas Encontrados | Soluciones Aplicadas | Reflexión/Aprendizaje            |
 | ---------- | ---------- | ---------------------------- | --------- | --------------------- | -------------------- | -------------------------------- |
 | 05/11/2026 | :books: S2 | Test Scrum y Scrum en GitHub | 3h        | N/A                   | N/A                  | Qué lento es todo, y qué técnico |
-| 12/11/2026 |            |                              |           |                       |                      |                                  |
+| 12/11/2026 |    N/A     | N/A                          | N/A       | N/A                   | N/A                  | N/A                              |
 | 19/11/2026 |            |                              |           |                       |                      |                                  |
 | 26/11/2026 |            |                              |           |                       |                      |                                  |
   
