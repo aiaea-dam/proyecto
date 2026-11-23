@@ -8,7 +8,7 @@ Timely
 
 ## Datos del Equipo
 
-* **Nombre del Proyecto:** <!-- TODO -->
+* **Nombre del Proyecto:** Timely
 * **Equipo:** AIAEA
 * **Miembros del Equipo:**
   * Aaron Quirant Chacón
@@ -35,70 +35,45 @@ Nuestra aplicación permite organizar de forma sencilla los horarios escolares y
 
 ## Actores y Roles
 
-* **Estudiantes:** Usuario
-* **Trabajadores:** Usuario
+* **Usuario General:** Estudiantes, trabajadores o cualquier persona que requiera gestionar su tiempo, horarios y actividades bajo un modelo flexible y unificado.
 
 ## Arquitectura general
 
-En pricipio seria una app Android a la que conectaríamos una BD SQlite para guardar los datos. Después haríamos una implementación con una base de datos en remoto.
+Aplicación móvil Android nativa desarrollada con Kotlin y Jetpack Compose (Material 3). Implementa una arquitectura **MVI (Model-View-Intent)** con flujo unidireccional de datos (UDF / Unidirectional Data Flow), estado inmutable (`UiState`), eventos de usuario (`UiIntent`) y efectos secundarios (`UiEffect`). La persistencia local se realiza de forma reactiva mediante Room Database (SQLite) y Kotlin Coroutines / Flow. En una fase posterior, se integrará sincronización con backend remoto.
 
-## Casos de Uso Principales
-
-### Para Estudiantes (App Móvil)
+## Casos de Uso Principales (Modelo Unificado)
 
 | Caso de Uso | Descripción | Prioridad |
 | --- | --- | --- |
-| 1 | Crear asignaturas | Alta |
-| 2 | Asignar asignaturas | Alta |
-| 3 | Introducir eventos | Alta |
-| 4 | Crear horario | Alta |
-| 5 | Respaldar usuario en BD SQLite | Alta |
-| 6 | Ver horario | Media |
-| 7 | Modificar horario | Media |
-| 8 | Modificar asignaturas | Media |
-| 9 | Introducir falta | Media |
-| 10 | Ver faltas restantes | Media |
-| 11 | Modificar faltas | Media |
-| 12 | Mostrar notificaciones | Media |
-| 13 | Registrar usuario | Baja |
-| 14 | Eliminar usuario | Baja |
-| 15 | Modificar usuario | Baja |
-| 16 | Asignar correos | Baja |
-| 17 | Mandar correos | Baja |
-| 18 | Exportar horarios | Baja |
-| 19 | Importar horarios | Baja |
-
-### Para Trabajadores (App Móvil)
-
-| Caso de Uso | Descripción | Prioridad |
-| --- | --- | --- |
-| 1 | Crear horas de trabajo | Alta |
-| 2 | Asignar horas trabajo | Alta |
-| 3 | Introducir eventos | Alta |
-| 4 | Crear horario | Alta |
-| 5 | Respaldar usuario en BD SQLite | Alta |
-| 6 | Ver horario | Media |
-| 7 | Modificar horario | Media |
-| 8 | Modificar horas trabajo | Media |
-| 9 | Mostrar notificaciones | Media |
-| 10 | Registrar usuario | Baja |
-| 11 | Eliminar usuario | Baja |
-| 12 | Modificar usuario | Baja |
-| 13 | Asignar correos | Baja |
-| 14 | Mandar correos | Baja |
-| 15 | Exportar horarios | Baja |
-| 16 | Importar horarios | Baja |
+| 1 | **Crear y gestionar actividades:** Crear materias, turnos de trabajo o tareas con nombre, color, ubicación, contacto y horas planificadas | Alta |
+| 2 | **Asignar actividades al horario:** Ubicar actividades en franjas horarias semanales recurrentes (día de la semana, hora inicio/fin) | Alta |
+| 3 | **Visualizar cuadrícula de horario:** Vista interactiva diaria y semanal con Jetpack Compose | Alta |
+| 4 | **Modificar y eliminar franjas horarias:** Editar horas o eliminar franjas recurrentes del horario | Alta |
+| 5 | **Cancelar instancia puntual de horario:** Anular una clase o turno en una fecha específica sin afectar la regla recurrente semanal | Alta |
+| 6 | **Cálculo y seguimiento del total de horas:** Visualizar automáticamente el cómputo total de horas semanales y por actividad | Alta |
+| 7 | **Persistencia local (Room SQLite):** Guardado reactivo y local de todas las actividades, horarios y eventos | Alta |
+| 8 | **Introducir eventos en la agenda:** Registrar exámenes, entregas o reuniones asociados a una actividad o fecha específica | Media |
+| 9 | **Consultar y modificar eventos:** Calendario y feed cronológico de eventos próximos | Media |
+| 10 | **Registrar faltas de asistencia:** Anotar faltas justificadas/no justificadas vinculadas a actividades con control de asistencia | Media |
+| 11 | **Control y alerta de faltas restantes:** Cálculo automático de horas de falta restantes según el límite establecido | Media |
+| 12 | **Notificaciones y recordatorios:** Avisos push locales previos al inicio de actividades o eventos (WorkManager / AlarmManager) | Media |
+| 13 | **Detección y resolución de solapamientos:** Advertir o prevenir colisiones entre actividades en la misma franja horaria | Media |
+| 14 | **Configurar perfil y preferencias:** Ajustar tema visual (claro/oscuro), horas visibles del horario y datos de usuario | Baja |
+| 15 | **Contactar vía correo electrónico:** Apertura directa del gestor de correo (Intent Android) con el contacto asignado a la actividad | Baja |
+| 16 | **Exportar horario y datos:** Exportación de cuadrícula y eventos a JSON / iCalendar (.ics) mediante SAF (Storage Access Framework) | Baja |
+| 17 | **Importar horario y datos:** Carga de horarios compartidos en formato estándar | Baja |
+| 18 | **Sincronización remota (Fase 2):** Respaldo y sincronización con base de datos / API en la nube | Baja |
 
 ## Riesgos y mitigación
 
 | Riesgo | Mitigación |
 | --- | --- |
-| Gestionar usuarios | Diferenciar entre permisos de trabajadores y estudiantes |
-| Falta experiencia | Uso de IA para hacer el código |
-| Falta de compromiso | Reuniones semanales y revisión de progreso |
-| Falta experiencia en Git | Practicar y usar Git |
-| Notificaciones | Usar un sistema de recordatorios |
-| Resolver conflictos varios horarios | Permitir crear varios horarios |
+| Conflictos y solapamiento de horarios | Algoritmo de validación de solapamiento en el Reducer/ViewModel (MVI) antes de persistir franjas |
+| Cancelación puntual alterando recurrencia | Tabla de excepciones (`SlotCancellationEntity`) que anula solo la fecha indicada |
+| Falta de experiencia en Android / Compose | Uso de documentación oficial de Jetpack Compose, patrones recomendados e IA como apoyo |
+| Falta de compromiso | Reuniones semanales y revisión de progreso según calendario de Sprints |
+| Falta de experiencia en Git | Flujo de trabajo con ramas por funcionalidad y revisiones de código |
+| Fiabilidad de notificaciones en segundo plano | Uso de `WorkManager` y `AlarmManager` con gestión de canales y permisos de Android 13+ |
 
 ## Planificación aproximada Sprints por quincena
 
