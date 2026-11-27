@@ -19,4 +19,6 @@
 
 | Fecha | Sesión | Tareas Realizadas | Tiempo | Problemas Encontrados | Soluciones Aplicadas | Reflexión/Aprendizaje |
 | --- | --- | --- | --- | --- | --- | --- |
-| 05/11 | S2 | - Repasar contenidos SCRUM (test sCRUM) | 20M | N/A | N/A | He aprendido sobre SCRUM |
+| 05/11 | S2 | Repasar contenidos SCRUM (test sCRUM) | 20M | N/A | N/A | He aprendido sobre SCRUM |
+| 19/11 | S5 | Actualizar PROYECTO.md | 30m | - | - | Aprender usar ia para organizar un documento |
+| 23/11 | S5 | Creado User Story | 1h 30m | - | - | Aprender a como manejar un tablero SCRUM en GitHub |
